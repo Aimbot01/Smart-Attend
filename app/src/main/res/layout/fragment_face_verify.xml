@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F6FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Step 3 of 3 — Face Verification"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#1A1D2E"
+            android:layout_marginTop="32dp"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Take a selfie for AI identity check. Look directly at camera."
+            android:textSize="13sp"
+            android:textColor="#6B7280"
+            android:gravity="center"
+            android:layout_marginTop="8dp"/>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivSelfie"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:src="@drawable/ic_face_placeholder"
+                android:background="#E5E7EB"
+                app:civ_border_width="4dp"
+                app:civ_border_color="#FFFFFF"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="bottom|end"
+                android:gravity="center"
+                android:layout_margin="8dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfileReference"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_face_placeholder"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="#FF6B35"
+                    android:background="#FFFFFF"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Registered"
+                    android:textSize="10sp"
+                    android:textColor="#FF6B35"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_rounded_white"
+                    android:paddingHorizontal="4dp"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCaptureCamera"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:text="Capture Selfie"
+            app:icon="@drawable/ic_face_placeholder"
+            android:backgroundTint="#4361EE"
+            app:cornerRadius="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDemoBypass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Skip (Demo purposes)"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="#AAAAAA"/>
+
+        <TextView
+            android:id="@+id/tvFaceStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No photo yet"
+            android:textColor="#6B7280"
+            android:layout_marginTop="12dp"/>
+
+        <ProgressBar
+            android:id="@+id/progressFace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="12dp"/>
+
+        <!-- AI Checks -->
+        <LinearLayout
+            android:id="@+id/layoutChecks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:visibility="gone">
+
+            <TextView android:id="@+id/tvCheck1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⏳ Detecting face..." android:textSize="14sp" android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/tvCheck2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⏳ Liveness check..." android:textSize="14sp" android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/tvCheck3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⏳ Uploading to server..." android:textSize="14sp"/>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnVerify"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="24dp"
+            android:text="Verify &amp; Submit Attendance"
+            android:backgroundTint="#7C3AED"
+            android:enabled="false"/>
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#EF4444"
+            android:visibility="gone"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</ScrollView>

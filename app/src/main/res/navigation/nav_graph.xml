@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment android:id="@+id/loginFragment"
+        android:name="com.smartattend.app.ui.auth.LoginFragment"
+        android:label="Login">
+        <action android:id="@+id/action_login_to_student"
+            app:destination="@id/studentDashboardFragment"/>
+        <action android:id="@+id/action_login_to_teacher"
+            app:destination="@id/teacherDashboardFragment"/>
+        <action android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/registerFragment"
+        android:name="com.smartattend.app.ui.auth.RegisterFragment"
+        android:label="Register">
+        <action android:id="@+id/action_register_to_login"
+            app:destination="@id/loginFragment"/>
+        <action android:id="@+id/action_register_to_student"
+            app:destination="@id/studentDashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
+        <action android:id="@+id/action_register_to_teacher"
+            app:destination="@id/teacherDashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <!-- STUDENT SCREENS -->
+    <fragment android:id="@+id/studentDashboardFragment"
+        android:name="com.smartattend.app.ui.student.StudentDashboardFragment">
+        <action android:id="@+id/action_dashboard_to_verify"
+            app:destination="@id/qrScanFragment"/>
+        <action android:id="@+id/action_dashboard_to_present"
+            app:destination="@id/presentDetailsFragment"/>
+        <action android:id="@+id/action_dashboard_to_absent"
+            app:destination="@id/absentDetailsFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/presentDetailsFragment"
+        android:name="com.smartattend.app.ui.student.PresentDetailsFragment"
+        android:label="Present Details" />
+
+    <fragment android:id="@+id/absentDetailsFragment"
+        android:name="com.smartattend.app.ui.student.AbsentDetailsFragment"
+        android:label="Absent Details" />
+
+    <fragment android:id="@+id/geoVerifyFragment"
+        android:name="com.smartattend.app.ui.verify.GeoVerifyFragment">
+        <action android:id="@+id/action_geo_to_face"
+            app:destination="@id/faceVerifyFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/qrScanFragment"
+        android:name="com.smartattend.app.ui.verify.QRScanFragment">
+        <action android:id="@+id/action_qr_to_geo"
+            app:destination="@id/geoVerifyFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/faceVerifyFragment"
+        android:name="com.smartattend.app.ui.verify.FaceVerifyFragment">
+        <action android:id="@+id/action_face_to_success"
+            app:destination="@id/successFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/successFragment"
+        android:name="com.smartattend.app.ui.verify.SuccessFragment">
+        <action android:id="@+id/action_success_to_dashboard"
+            app:destination="@id/studentDashboardFragment"
+            app:popUpTo="@id/studentDashboardFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment android:id="@+id/scheduleFragment"
+        android:name="com.smartattend.app.ui.student.ScheduleFragment"
+        android:label="Schedule" />
+
+    <fragment android:id="@+id/reportsFragment"
+        android:name="com.smartattend.app.ui.student.ReportsFragment"
+        android:label="Reports" />
+
+    <fragment android:id="@+id/profileFragment"
+        android:name="com.smartattend.app.ui.student.ProfileFragment"
+        android:label="Profile" />
+
+    <!-- TEACHER SCREENS -->
+    <fragment android:id="@+id/teacherDashboardFragment"
+        android:name="com.smartattend.app.ui.teacher.TeacherDashboardFragment">
+        <action android:id="@+id/action_teacher_to_session"
+            app:destination="@id/teacherSessionFragment"/>
+        <action android:id="@+id/action_teacher_to_schedule"
+            app:destination="@id/teacherScheduleFragment"/>
+        <action android:id="@+id/action_teacher_to_reports"
+            app:destination="@id/teacherReportsFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/teacherSessionFragment"
+        android:name="com.smartattend.app.ui.teacher.TeacherSessionFragment"/>
+        
+    <fragment android:id="@+id/teacherScheduleFragment"
+        android:name="com.smartattend.app.ui.teacher.TeacherScheduleFragment"/>
+        
+    <fragment android:id="@+id/teacherReportsFragment"
+        android:name="com.smartattend.app.ui.teacher.TeacherReportsFragment"/>
+</navigation>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step 2 of 3 — Location Check"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#1A1D2E"/>
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You must be within 10 metres of the teacher"
+        android:textSize="14sp"
+        android:textColor="#6B7280"
+        android:layout_marginTop="8dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tvDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detecting..."
+        android:textSize="42sp"
+        android:textStyle="bold"
+        android:textColor="#FF6B35"
+        android:layout_marginTop="40dp"/>
+
+    <ProgressBar
+        android:id="@+id/progressGeo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tvGeoStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Acquiring GPS..."
+        android:textSize="14sp"
+        android:textColor="#6B7280"
+        android:layout_marginTop="16dp"
+        android:gravity="center"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="32dp"
+        android:text="Proceed to Face Verify"
+        android:backgroundTint="#FF6B35"
+        android:enabled="false"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDemoBypass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Skip (Demo purposes)"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:textColor="#AAAAAA"/>
+
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#EF4444"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>
