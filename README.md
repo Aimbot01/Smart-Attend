@@ -69,8 +69,6 @@ The main objective of Smart Attend is to digitize and simplify the traditional a
 
 ## Future Improvements
 
-* Face Recognition Attendance
-* QR-Based Attendance System
 * Email Notifications
 * Attendance Analytics Dashboard
 * AI-Based Attendance Insights
